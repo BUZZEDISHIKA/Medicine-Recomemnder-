@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myapp</title>
+    <style>
+        /* CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root{
+    --navbar-height: 59px;
+}
+
+/* Navigation Bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Navigation Bar: Logo and Image */
+#logo{
+    margin: 10px 34px;
+}
+
+#logo img{
+    height: 59px;
+    margin: 3px 6px;
+    border-radius: 1000px;
+    border: 2px solid black;
+}
+#home::before{ 
+    content: "";
+    position: absolute;
+    height: 42px;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: -1;
+}
+
+
+/* Navigation Bar: List Styling */
+
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai', cursive;
+}
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1.3rem;
+}
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+#services .box{ 
+    border: 2px solid rgb(132, 197, 104);
+    padding: 34px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+}
+#services .box img{ 
+   height: 160px;
+   margin: auto;
+   display: block;
+}
+#services .box p{
+    font-family: 'Bree Serif', serif;
+} 
+/* Clients Section */
+#client-section{ 
+    position: relative;
+    color: black;
+}
+#client-section::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* opacity: 0.9; */
+}
+#clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.client-item{
+    padding: 34px;
+    z-index: -1;
+}
+#clients img{
+    height: 124px;
+    border: 2px solid black;
+}
+/* Contact Section */
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+    width:  1 1 auto;
+}
+.center{
+    text-align: center;
+}
+
+    </style>
+    <!-- <link rel="stylesheet" media="screen and (max-width: 1170px)" href="css/phone.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="">
+        </div>
+        <ul>
+            <li class="item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="item"><a href="#services-container">Ishika Bagchi</a></li>
+            <li class="item"><a href="#services-container">Gobindo Dey Choudhury</a></li>
+        </ul>
+    </nav>
+
+    
+    <section id="services-container">
+        <div id="services">
+            <div class="box">
+                <img class="download" src="{{ url_for('static', filename='ishika.jpg') }}" alt="">
+                <h2 class="h-secondary center">Ishika Bagchi</h2>
+                <p class="center">Hello 👋..
+                    My name Is Ishika Bagchi , currently studying in 3rd year B.Sc undergraduate pursuing my course in Computer Science Hons from T.D.B Colllege 
+                    I have completed two major projects like 
+                    Online Doctor Appointment System
+                    Online Zomato Clone
+                    
+                    That's All About Me 
+                </p>
+            </div>
+            <div class="box">
+                <img class="download" src="{{ url_for('static', filename='WhatsApp Image 2024-05-04 at 07.52.51_c9da8455.jpg') }}" alt="">
+                <h2 class="h-secondary center">Gobindo Dey Choudhury</h2>
+                <p class="center">Hello 👋..
+                    My name Is Gobindo Dey Choudhury , currently studying in 3rd year B.Sc undergraduate pursuing my course in Computer Science Hons from T.D.B Colllege.
+                I have Completed one major project like Online Doctor Appointment System. </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.ishika_gobindo@gmail.com All rights reserved!
+        </div>
+        <div class="center">
+            <a href="{{ url_for('index') }}">Back to Home</a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
